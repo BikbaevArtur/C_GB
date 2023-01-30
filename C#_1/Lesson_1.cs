@@ -91,4 +91,69 @@ while (count < 10000)
     Console.WriteLine("+");
     count++;
 }
-*/
+int number = 26
+Console.WriteLine("My number is"+number+"| I like it|");
+Console.WriteLine($"Mt number is {number}| I like it is"|); лучше писаить так
+
+number = Console.ReadLine(); - не конвертированное значение
+int number = Convert.ToInt32(Console.ReadLine()); -конвертированное значение
+читается справно налево, тобишь ввод=>конверт=>присвоение number
+
+
+//Задача 1.
+//Напишите программу, которая на вход принимает число, и выдает его квадрат
+
+int number = Convert.ToInt32(Console.ReadLine());
+Console.Write(number*number);
+
+
+// Задача 3
+//Напишите программу на вход принимает два числа, и проверяет
+//является ли первое число квадратром второго. 
+
+Console.WriteLine("Введите первое число:");
+int number_1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число:");
+int number_2 = Convert.ToInt32(Console.ReadLine());
+int resul=number_1 / number_2;
+if(resul == number_2)
+    Console.WriteLine($"Первое число является квадратом {number_2}" );
+else
+    Console.WriteLine($"Первое число не является квадратом {number_2}" );
+
+Задача 5.
+Напишите программу, которая на входе принимает одно число (N),
+а на выходе показывает все целые числа в промежутке от -N до N
+   
+
+Console.Write("Input your number N:");
+int number = Convert.ToInt32(Console.ReadLine());
+int current_num = number * (-1);
+while (current_num <= number)
+{
+    Console.Write(current_num + " ");
+    current_num++; 
+}
+
+Задача 7.
+Напишите программу, которая на входе принимает трехзначное число, и на выходе показывает последнюю цифру этого числа 
+
+ 
+
+ Console.Write("Введите трехзначное число:");
+ int num = Convert.ToInt32(Console.ReadLine());
+ if (num >99 && num< 1000
+    ) // оперсант 
+ {
+    int result = num % 10;
+    Console.WriteLine($"Последняя цифра числа {num} : {result}");
+ }
+ else
+ {
+    Console.WriteLine("Число не трехзначное ");
+ }
+ */
+
+ 
+
+ 
