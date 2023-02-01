@@ -145,7 +145,7 @@ Console.WriteLine();
 
 int pos =IndexOf(array, 4);
 Console.Write(pos);
-*/
+
 
 // Задача 1.
 // Напишите программу, которая получает на вход двузначное число и показывает наибольшую цифру числа.
@@ -162,6 +162,90 @@ if(user_number > 9 && user_number < 100)
     else max = dec;
     Console.WriteLine($"max number : {max}");
 }
+
+// решение задачи с помощью метода
+int Digits (int number) // создали метод, нужно ввесли число
+{
+    int ed = number % 10;
+    int dc =number / 10;
+    
+    if(ed > dc)
+    {
+        return ed;
+    }
+    else if (dc > ed)
+            return dc;
+        else
+            return ed; 
+}
+
+Console.WriteLine("input 2digit numbe: ");
+int user_number = Convert.ToInt32(Console.ReadLine());
+int result;
+
+if (user_number > 9 && user_number < 99)
+{
+    result = Digits ( user_number);
+    Console.Write(result);
+}
+else
+    Console.WriteLine("DUUUUD");
+*/
+
+//Задача 2.
+// напишите программу которая выводит случайное число из отрезка [10, 99] и показывает найибольшую цифру чила.
+//78 -> 8
+//12 -> 2
+//85 -> 8
+// Решение задачи с методом с задачи 1 
+/*
+int Digits (int number) // создали метод, нужно ввесли число
+{
+    int ed = number % 10;
+    int dc =number / 10;
+    
+    if(ed > dc)
+    {
+        return ed;
+    }
+    else if (dc > ed)
+            return dc;
+        else
+            return ed; 
+}
+
+int r_number = new Random().Next(10, 99);
+int maxDigit = Digits(r_number);
+
+
+Console.WriteLine(r_number);
+Console.WriteLine(maxDigit); 
+
+
+int DigitalRandom()
+{
+    int r_number = new Random().Next(10, 100);
+    Console.WriteLine($"random number {r_number}");
+    int ed = r_number % 10;
+    int dc = r_number / 10 ;
+    if(ed>dc) return ed;
+    else return dc;
+    
+}
+int result = DigitalRandom();
+Console.WriteLine($"max number: {result}");
+*/
+
+// Задача 3
+//Напишите программу, которая принимает на вход число и проверяет , кратно ли оно одновременно a и b. a,b  вводит пользователь
+
+int n = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+if(a % n == 0)
+if(b % n == 0)
+Console.WriteLine("+");
+else Console.WriteLine("-");
 
 
 
