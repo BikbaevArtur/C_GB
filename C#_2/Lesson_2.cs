@@ -234,7 +234,7 @@ int DigitalRandom()
 }
 int result = DigitalRandom();
 Console.WriteLine($"max number: {result}");
-*/
+
 
 // Задача 3
 //Напишите программу, которая принимает на вход число и проверяет , кратно ли оно одновременно a и b. a,b  вводит пользователь
@@ -248,5 +248,62 @@ Console.WriteLine("+");
 else Console.WriteLine("-");
 
 
+
+void Devider (int numberToDevide, int dev1, int dev2)
+{
+    if(dev1 % numberToDevide == 0 && dev2 % numberToDevide == 0)
+        Console.WriteLine("multiple number");
+    else 
+        Console.WriteLine("not multiple number");  
+}
+Console.WriteLine("input dividing number: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input devisible number1: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input devisible number2: ");
+int b = Convert.ToInt32(Console.ReadLine());
+
+Devider(n,a,b);
+
+
+
+
+
+// Задача 4 
+// Напшите программу, которая выводит случайное трехзначное число и удаляет вторую цифру этого числа
+
+int number = new Random().Next(99, 1000);
+Console.WriteLine(number);
+int ed = number / 100;
+int sot = number % 10; // int n = ed * 10 + sot
+Console.Write(ed);     // console.WriteLine(n);
+Console.Write(sot);
+
+int Random()
+{
+    int number = new Random().Next(99, 1000);
+    Console.WriteLine(number);
+    int ed = number / 100;
+    int sot = number % 10;
+    int n = ed * 10 + sot;
+    return n;
+}
+int result = Random();
+Console.WriteLine(result);
+
+/*
+//Задача 5
+//Напишите программу, которая принмает два числа и проверяет, является ли одно число квадратом другого.
+void Square(int fn, int sn)
+{
+    if(fn*fn == sn || sn * sn == fn)
+        Console.WriteLine("+");
+    else
+        Console.WriteLine("-");
+}
+int firstNumber = Convert.ToInt32(Console.ReadLine());
+int secondNumber = Convert.ToInt32(Console.ReadLine());
+Square(firstNumber, secondNumber);   
+*/
 
 
