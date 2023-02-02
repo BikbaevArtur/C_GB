@@ -74,10 +74,8 @@ Console.WriteLine($"Dell = {result}"); // {result :f2}// так же можно 
 void Tabl (int n)
 {int b = 1;
 while(b <= n)
-{   int v = b * b;
-    Console.Write(b+":");
-    
-    Console.Write(v+" ");
+{   int v = b * b * b;
+    Console.Write(v+", ");
     b++;
 }
 }
