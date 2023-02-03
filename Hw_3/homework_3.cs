@@ -4,6 +4,28 @@
 //14212 -> нет
 //12821 -> да
 //23432 -> да
+void Palindrom(int n)
+{
+    int temp = n;
+    int result = 0;
+    while(n > 0)
+    {
+        int dec = n%10;
+        result = result * 10 + dec;
+        n = n / 10 ;
+    }
+    if(temp == result)
+        Console.WriteLine($"number: {temp} is palindrom");
+    else 
+        Console.WriteLine($"number{temp}: is not palindrom");
+
+}
+
+Console.WriteLine("Input number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Palindrom(num);
+
+
 
 
 
