@@ -65,7 +65,6 @@ Console.Write("yCor2: ");
 double yCor2 = Convert.ToDouble(Console.ReadLine());
 double result = Dell(xCor1, yCor1,xCor2 ,yCor2);
 Console.WriteLine($"Dell = {result}"); // {result :f2}// так же можно использовать что бы после запятой показывать 2 цифры с округлением
-*/
 
 // Задача 4 
 // Напишите программу, которая принимает на вход число N и 
@@ -81,3 +80,72 @@ while(b <= n)
 }
 int num = Convert.ToInt32(Console.ReadLine());
 Tabl(num);
+*/
+
+/*
+
+Вид 1 Не возвращает, и не принимает аргументы
+void Method1()
+{
+    console.WriteLine("Autor..");
+}
+Metod(); 
+
+Вид 2 Не возвращает, но принимает аргументы
+
+void Method2(string msg, int count )
+{ 
+    int i = 0
+    while(i < count)
+    {
+        Console.WriteLine(msg);
+        i++;
+    }
+}   
+
+Method2(msg:"Текст сообщения",4); цикл на сообщения 4 раза 
+можно приписывать к аргументам значения 
+Инкремент это увеличение в цикле ++
+Дескримент Уменьшение в цикле --
+
+Вид 3 Возвратный метод
+
+int Method3()
+{
+    return DateTime.Now.Year; указывает дата
+}
+
+int year = Method3();
+Console.WriteLine(year );
+
+цикл for () собирает все в 1 месте, и инициализацию, и условие
+int i = 0;
+string result = String.Empty; обозначение пустой строчки, это тупо что бы поняли, хороший тон
+
+int Method4(int adsa)
+{   
+    int i = 0;
+    string result = String.Empty
+
+    while( i < count)
+    {
+        result = result + text;
+        i++;
+    }
+    return result;
+}   
+int asd = method 4
+cosole.writeline(asd)
+
+======= тоже самое с for
+int Method4(int adsa)
+{   
+    string result = String.Empty;
+    for (int i = 0; i<count; i++)
+    {
+        result = result + text;
+    }
+}   
+int asd = method 4
+cosole.writeline(asd)
+
