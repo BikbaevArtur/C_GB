@@ -40,6 +40,76 @@ Console.WriteLine(result);
 // Напишите программ, замены элементов массива : положительные элементы заменить на соответсвтующие
 // отрицательные, и наобарот
 
+/*
+int [] ArrayNew ( int size, int minV, int maxV)
+{
+    int [] random = new int[size];
+    for(int i=0; i<size; i++)
+    {
+        random[i] = new Random().Next(minV, maxV +1);
+    }
+    return random;
+}
+
+void ShowAr ( int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+*/
+/*int [] RewArray ( int[] array)
+{
+    for(int i=0; i<array.Length;i++)
+    {
+        array[i] *= -1;
+    }
+    return array;
+}
+*/
+//int[] array1 = ArrayNew(8, -10, 10); // массив
+//ShowAr(array1);// показать массив
+//RewArray(array1);//замена знач
+//ShowAr(array1);// показ замененный
+
+// Задача
+// Задайте массив. Напишите программу которая определяет, присутствует ли 
+// заданное число в массиве
+/*
+bool DigitsAr (int[] array, int digits) // логическое bool или правда или лож
+{   
+
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] == digits) return true;
+    }
+    return false;
+
+    
+}
+
+
+
+Console.WriteLine("Input size array: ");
+int sizearray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input min number array: ");
+int minarray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input max numb array: ");
+int maxarray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input digits: ");
+int digitsarray = Convert.ToInt32(Console.ReadLine());
+
+int[] array1 = ArrayNew(sizearray, minarray, maxarray);
+ShowAr(array1);
+bool result = DigitsAr(array1, digitsarray);
+if(result == true) Console.WriteLine("+");
+else Console.WriteLine("-");
+*/
+//Задача
+//Нужно найти произведение пар чисел в одномерном массиве. Парой считается первый и последий элемент.
+//Второй и предпоследний и тд. Результат запишите в новом массиве
 
 int [] ArrayNew ( int size, int minV, int maxV)
 {
@@ -60,33 +130,34 @@ void ShowAr ( int[] array)
     Console.WriteLine();
 }
 
-/*int [] RewArray ( int[] array)
+int NewArraySize ( int start_size)
 {
-    for(int i=0; i<array.Length;i++)
-    {
-        array[i] *= -1;
-    }
-    return array;
-}
-*/
-//int[] array1 = ArrayNew(8, -10, 10); // массив
-//ShowAr(array1);// показать массив
-//RewArray(array1);//замена знач
-//ShowAr(array1);// показ замененный
+    int end_size = 0;
+    if(start_size%2 ==0)
+        end_size = start_size/2;
+    else
+        end_size = start_size/2 +1 ;
+    return end_size;
 
-// Задача
-// Задайте массив. Напишите программу которая определяет, присутствует ли 
-// заданное число в массиве
-void DigitsAr (int[] array, int digits)
+}
+
+int[] ArrayProduct(int [] massiv)
 {
-    for(int i = 0; i < array.Length; i++)
+    int result_size = NewArraySize(massiv.Length);
+    int[] result_array= new int[result_size];
+    for(int i=0; i <  massiv.Length /2 +1 ; i++)
     {
-        if(array[i] == digits) Console.WriteLine("+") ;
-        else Console.WriteLine("-");
+        if(i==massiv.Length -1 -i)
+            result_array[i]= massiv[i];
+        else
+            result_array[i] = massiv[i] * massiv[massiv.Length -1 -i];
+        
     }
+    return result_array;
+  
+}   
 
-    
-}
+
 
 
 
@@ -97,8 +168,8 @@ int minarray = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input max numb array: ");
 int maxarray = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("input digits: ");
-int digitsarray = Convert.ToInt32(Console.ReadLine());
 
-int[] array1 = ArrayNew(sizearray, minarray, maxarray);
-ShowAr(array1);
-DigitsAr(array1, digitsarray);
+int[] first_array = ArrayNew(sizearray,minarray,maxarray);
+ShowAr(first_array);
+int[] secondArray = ArrayProduct(first_array);
+ShowAr(secondArray);
