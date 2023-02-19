@@ -33,14 +33,31 @@ Console.WriteLine("Input size massiv: ");
 int sizearray = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("enter the minimum three-digit number: ");
 int minDigits = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("enter the maximum three-digit number: ");
-int maxDigits = Convert.ToInt32(Console.ReadLine());
+if(minDigits > 99 && minDigits < 1000)
+{
+    Console.WriteLine("enter the maximum three-digit number: ");
+    int maxDigits = Convert.ToInt32(Console.ReadLine());
+    if(maxDigits > 99 && maxDigits < 1000)
+    {
+        int [] arrayNew = Array(sizearray, minDigits, maxDigits);
+        ShowArray(arrayNew);
+        ResultDigits(arrayNew);
+    }
+    else
+    { 
+        Console.WriteLine("you entered a non-three-digit number");
+    }
+
+    
+}
+else
+{ 
+    Console.WriteLine("you entered a non-three-digit number");
+}
 
 
-int [] arrayNew = Array(sizearray, minDigits, maxDigits);
-ShowArray(arrayNew);
-ResultDigits(arrayNew);
-else Console.WriteLine("you entered a non-three-digit number");
+
+
 
 
 
