@@ -3,49 +3,38 @@
 //0, 7, 8, -2, -2 -> 2
 
 //1, -7, 567, 89, 223-> 3
-int Prompt (string mas)
+
+
+int[] Mass (int size)
 {
-    System.Console.Write(mas);
-    string value = Console.ReadLine();
-    int result = Convert.ToInt32(value);
-    return result;
+    int [] newArray = new int [size];
+    Console.Write("Input num: ");
+    for (int i=0; i<size; i++)
+        newArray[i]=Convert.ToInt32(Console.ReadLine());
+    return newArray;
 }
 
-int [] Inp(int lenght)
+void ShowArray ( int[]array)
 {
-    int [] arr = new int [lenght];
-    for (int i=0; i < arr.Length; i++)
-    {
-        arr[i]=Prompt($"введите {i+1}");
-
-    }
-    return arr;
-}   
-
-void Pri(int[] arr)
-{
-    for(int i=0; i < arr.Length; i++)
-    Console.WriteLine($"a{i} = {arr[i]}");
+    for(int i=0;i<array.Length;i++)
+        Console.Write(array[i] + " ");
 }
 
-int Count ( int[] array)
+int Result (int [] resultArray)
 {
-    int count =0;
-    for(int i=0; i<array.Length; i++)
-        if(array[i] > 0)
-            count++;
+    int count = 0;
+    for(int i=0; i<resultArray.Length; i++)
+        if(resultArray[i]>0)count++;
     return count;
-} 
-
-int lenght = Prompt("Введите");
-int [] array;
-array = Inp(lenght);
-Pri(array);
-Console.WriteLine($"Кол во{Count(array)}");
+}
 
 
+Console.WriteLine("How many numbers do you want to check");
+int sizearray = Convert.ToInt32(Console.ReadLine());
 
-
+int []  numArray = Mass(sizearray);
+ShowArray(numArray);
+Console.WriteLine($"The numbers of digits > 0 = {Result(numArray)}");
 
 
 
