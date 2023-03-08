@@ -10,6 +10,9 @@
 8 4 4 2
 */
 
+
+/*
+
 int[,] Array2D()
 {
     Console.WriteLine("Input row array: ");
@@ -31,6 +34,8 @@ int[,] Array2D()
     }
     return array;
 }
+
+*/
 
 void Show2Darray(int[,] array)
 {
@@ -92,6 +97,8 @@ Show2Darray(sortArray);
 
 */
 
+/*
+
 int[] SumRow(int[,] array)
 {
     int size = array.GetLength(0);
@@ -111,11 +118,19 @@ int[] SumRow(int[,] array)
 
 }
 
+
+
+
 void ShowArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
 }
+
+*/
+
+
+/*
 
 void Result(int[] array)
 {
@@ -128,6 +143,11 @@ void Result(int[] array)
     Console.WriteLine($"the row with the smallest sum of elements: {indexmin}");
 }
 
+*/
+
+
+
+/*
 
 int[,] newarray = Array2D();
 Show2Darray(newarray);
@@ -136,6 +156,8 @@ Console.WriteLine();
 ShowArray(sum);
 Console.WriteLine();
 Result(sum);
+*/
+
 
 /*
 Задача 57: Составить частотный словарь элементов двумерного массива. Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
@@ -148,6 +170,52 @@ Result(sum);
 9 встречается 3 раза
 */
 
+
+int[,] Array2D(int row, int column, int min, int max)
+{
+
+
+    int[,] array = new int[row, column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            array[i, j] = new Random().Next(min, max );
+        }
+    }
+    return array;
+}
+
+
+void Frequency(int[,] array, int digit1, int digit2)
+{
+    while (digit1 < digit2)
+    {
+        int count = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+                if (digit1 == array[i, j]) count++;
+        }
+        if (count > 0) Console.WriteLine($"{digit1} встречается {count}");
+        digit1++;
+
+    }
+}
+
+Console.WriteLine("Input row array: ");
+int rowAr = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input column array: ");
+int columnAr = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input minVol array: ");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input maxVol array: ");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int[,] array2D = Array2D(rowAr, columnAr, minV, maxV);
+Show2Darray(array2D);
+Console.WriteLine();
+Frequency(array2D,minV,maxV);
 
 /*
 
