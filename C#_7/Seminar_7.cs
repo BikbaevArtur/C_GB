@@ -87,3 +87,10 @@ while(user_input != t)
 
 ///____________________Лекция____________________________
 // Главное условие рекурсии - выход
+int SumRec(int n)
+{
+    if (n == 0) return 0;
+    else return n + SumRec(n - 1);
+}
+
+Console.Write(SumRec(10));
