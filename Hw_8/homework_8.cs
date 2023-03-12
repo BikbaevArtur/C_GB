@@ -180,7 +180,7 @@ int[,] Array2D(int row, int column, int min, int max)
     {
         for (int j = 0; j < column; j++)
         {
-            array[i, j] = new Random().Next(min, max );
+            array[i, j] = new Random().Next(min, max);
         }
     }
     return array;
@@ -215,7 +215,7 @@ int maxV = Convert.ToInt32(Console.ReadLine());
 int[,] array2D = Array2D(rowAr, columnAr, minV, maxV);
 Show2Darray(array2D);
 Console.WriteLine();
-Frequency(array2D,minV,maxV);
+Frequency(array2D, minV, maxV);
 
 /*
 
